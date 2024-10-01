@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int age;
+    char citizenship;
+
+    // Input age
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    printf("Your age is: %d\n", age);  // Print the age
+
+    // Input citizenship
+    printf("Are you a citizen of India? (y/n): ");  
+    scanf(" %c", &citizenship);
+
+    // Check eligibility for account creation
+    if (age >= 18 && (citizenship == 'y' || citizenship == 'Y')) {
+        printf("You are eligible to create your account and can get your ATM card.\n");
+    } else if (age < 18 && (citizenship != 'y' && citizenship != 'Y')) {
+        printf("You are not eligible to create a bank account and can't get your ATM card.\n");
+    } 
+    
+    if(citizenship == 'n'){
+        printf("You are eligible to create your account but taxation depends on your residency status.\n ");
+   }else if(age < 18){
+       printf("You can create a joint with your parents or guardian.\n");
+   }
+   else if (age < 18 && citizenship != 'y'){
+         printf("You can create a joint with your parents or guardian but taxation depends on your residency status.\n");
+   }
+    return 0;
+}
